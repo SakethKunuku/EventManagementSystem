@@ -310,33 +310,6 @@
 
 
     <div class="content">
-        <div class="login-card">
-            <h2>Login</h2>
-            <form class="login-form" action="{% url 'login1' %}" method="post">
-                {% csrf_token %}
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br> <!-- Added email input -->
-                <label for="password">Password:</label>
-                <div class="password-container">
-                    <input type="password" id="password" name="password" required>
-                    <i class="fa fa-eye" id="show-password"></i>
-
-                </div>
-                   <p><a href="{% url 'password_reset' %}" class="forgot-password-link">RESET YOUR PASSWORD ?</a></p>
-                <button type="submit">Login</button>
-            </form>
-            <p>No Account Yet? <a href="{% url 'signup' %}" class="signup-link">Sign Up</a></p>
-              <!-- Flash Messages for Login -->
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}" role="alert">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-        </div>
 
         <div class="signup-card" style="display: none;">
             <h2>Signup</h2>
@@ -377,6 +350,36 @@
             {% endfor %}
         {% endif %}
         </div>
+
+        <div class="login-card">
+            <h2>Login</h2>
+            <form class="login-form" action="{% url 'login1' %}" method="post">
+                {% csrf_token %}
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br> <!-- Added email input -->
+                <label for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <i class="fa fa-eye" id="show-password"></i>
+
+                </div>
+                   <p><a href="{% url 'password_reset' %}" class="forgot-password-link">RESET YOUR PASSWORD ?</a></p>
+                <button type="submit">Login</button>
+            </form>
+            <p>No Account Yet? <a href="{% url 'signup' %}" class="signup-link">Sign Up</a></p>
+              <!-- Flash Messages for Login -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+
+
     </div>
 </div>
 
