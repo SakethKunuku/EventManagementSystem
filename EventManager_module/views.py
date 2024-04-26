@@ -5,7 +5,7 @@ from EventParticipant_module.models import EventApplication
 
 # Create your views here.
 def Eventpost(request):
-    return render(request, 'EventManager_module/Eventpost.html')
+    return render(request, 'EventManager_module/eventpost.html')
 
 from django.http import HttpResponseBadRequest
 
